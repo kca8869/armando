@@ -1,0 +1,58 @@
+.signup{
+  background-color: var(--color-dark-gray);
+  padding: 10rem 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include respond(large){
+    flex-direction: column;
+  }
+  @include respond(med){
+    padding: 2rem 2rem;
+  }
+  &__text-box{
+    flex:0 0 50%;
+  }
+
+  &__heading{
+    color: var(--color-white);
+    font-size: 4rem;
+    padding: 2rem 0;
+  }
+
+  &__discount{
+    color: var(--color-primary);
+  }
+
+  &__text{
+    color: var(--color-price);
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-weight: bold;
+  }
+
+  &__form{
+    flex:0 0 40%;
+    margin-left: auto;
+    display: flex;
+    @include respond(med){
+      display: block;
+    }
+  }
+
+  &__email{
+    padding: 1rem 2rem;
+    flex-grow: 1;
+    border: none;
+    @include respond(med){
+      margin: 1rem 0;
+    }
+
+  }
+
+  &__submit{
+    background-color: var(--color-primary);
+    margin: 0;
+
+  }
+}

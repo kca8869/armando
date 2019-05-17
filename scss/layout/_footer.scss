@@ -1,0 +1,137 @@
+.footer{
+  background-color: var(--color-very-dark-gray);
+  display: flex;
+  padding: 10rem;
+  justify-content: space-between;
+  align-items: center;
+  @include respond(large){
+    flex-direction: column;
+  }
+  @include respond(med){
+    align-items: flex-start;
+    padding: 2rem;
+  }
+  &__logo-box{
+    @include respond(large){
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+  &__logo{
+
+  }
+  &__icon{
+    height: 1.5rem;
+    width: 1.5rem;
+    fill:var(--color-price);
+  }
+  &__copyright{
+    font-size: 1.2rem;
+    color: var(--color-price);
+    line-height: 3rem;
+  }
+  &__colorlib{
+    &,
+    &:link,
+    &:visited{
+      color: inherit;
+      text-decoration: none;
+      transition: $transition-default;
+    }
+    &:hover{
+      color: var(--color-white);
+    }
+  }
+  &__nav-box{
+    overflow: hidden;
+
+  }
+  &__nav-checkbox{
+    display: none;
+  }
+  &__nav-checkbox:checked ~ &__list{
+    transform: translateY(0);
+  }
+  &__nav-label{
+
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    display: none;
+    @include respond(med){
+      display: block;
+    }
+  }
+  &__hamburger{
+    display: inline-block;
+    width: 3rem;
+    height: 3px;
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    &::before,
+    &::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      background-color: inherit;
+      position: absolute;
+
+      left: 0;
+    }
+
+    &::before{
+      top: -1rem;
+    }
+    &::after{
+      top: 1rem;
+    }
+  }
+  &__list{
+    display: flex;
+    justify-content: space-between;
+    flex: 0 0 50%;
+    transition: $transition-default;
+    @include respond(large){
+      width: 100%;
+    }
+    @include respond(med){
+      flex-direction: column;
+      transform: translateY(-120%);
+
+    }
+  }
+
+  &__item{
+    padding: 0 2rem;
+    @include respond(med){
+      padding: 1rem 0;
+    }
+  }
+
+  &__link{
+    &,
+    &:link,
+    &:visited{
+      text-decoration: none;
+      color: var(--color-white);
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      font-weight: bold;
+      transition: $transition-default;
+
+      &:hover{
+        color: var(--color-primary);
+    }
+  }
+
+    &--active{
+      color:var(--color-primary)!important;
+    }
+
+}
+}

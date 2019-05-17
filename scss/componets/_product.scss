@@ -1,0 +1,69 @@
+.product{
+  position: relative;
+  //width: 33%;
+  &--last-3{
+    @include respond(large){
+      width: 50%;
+    }
+    @include respond(med){
+      width: 100%;
+    }
+  }
+
+//  min-width: 25rem;
+  &:hover::after{
+    opacity: 1;
+  }
+  &:hover &__text-box{
+    & > *{
+      color: white;
+    }
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+    opacity: 0;
+    transition: $transition-default;
+
+  }
+
+  &__bg-img{
+    width: 100%;
+  }
+
+  &__text-box{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 1;
+
+    & > *{
+      margin: .5rem;
+      transition: $transition-default;
+    }
+
+    &::before{
+      content: "";
+      display: block;
+      width: 50%;
+      height: 3px;
+      background-color: var(--color-primary);
+      margin: .5rem;
+    }
+  }
+
+  &__price{
+    color: var(--color-price);
+    font-size: 2rem;
+  }
+  &__name{
+    font-size: 2.5rem;
+  }
+
+}

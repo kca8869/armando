@@ -1,0 +1,141 @@
+.navigation{
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 25%;
+  align-items: flex-start;
+  padding: 6rem;
+  justify-content: space-between;
+  @include respond(large){
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem;
+    align-items: center;
+  }
+  &__logo{
+    height: 5rem;
+    width: 13rem;
+  }
+
+  &__list{
+    list-style: none;
+    @include respond(large){
+      display: flex;
+    }
+    @include respond(med){
+      flex-wrap: wrap;
+    }
+    &--main{
+
+    }
+
+    &--secondary{
+
+    }
+
+    &--social{
+      display: flex;
+      justify-content: space-between;
+      align-self: stretch;
+    }
+  }
+
+  &__item{
+    margin: 2.5rem 0;
+    @include respond(large){
+      margin: 1rem;
+    }
+    &--main{
+      position: relative;
+      &:hover::before{
+        width: 3rem;
+      }
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 3px;
+        background-color: var(--color-primary);
+        position: absolute;
+        top: 50%;
+        left: -100%;
+        transition: $transition-default;
+        @include respond(large){
+          content: none;
+        }
+      }
+    }
+
+    &--secondary{
+      display: flex;
+      align-items: center;
+    }
+
+    &--social{
+
+    }
+    &--active{
+      &::before{
+        content: "";
+        display: inline-block;
+        height: 3px;
+        background-color: var(--color-primary);
+        width: 3rem;
+        position: absolute;
+        top: 50%;
+        left: -100%;
+        @include respond(large){
+          content: none;
+        }
+      }
+    }
+  }
+
+  &__link{
+    &,
+    &:link,
+    &:visited{
+      text-decoration: none;
+      color: var(--color-black);
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      font-weight: bold;
+      transition: $transition-default;
+      &:hover{
+        color: var(--color-primary);
+    }
+
+    &--main{
+
+      }
+
+    }
+
+    &--secondary{
+
+    }
+
+    &--social{
+
+    }
+
+
+  }
+
+  &__icon{
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-price);
+
+    &--secondary{
+      margin-right: 1rem;
+    }
+
+    &--social{
+      transition: $transition-default;
+      &:hover{
+        fill:var(--color-primary);
+      }
+
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.container{
+  //max-width: 100vw;
+  display: flex;
+  @include respond(large){
+    flex-direction: column;
+  }
+  //padding-top: 10rem;
+}
+
+.product-display{
+  display: flex;
+  //flex-wrap: wrap;
+  //align-items: stretch;
+  @include respond(large){
+    flex-wrap: wrap;
+  }
+
+//
+}
+.product-row{
+  display: flex;
+  flex-direction: column;
+  @include respond(large){
+    width: 50%;
+  }
+  @include respond(med){
+    width: 100%;
+  }
+
+  &--last{
+    @include respond(large){
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+}
